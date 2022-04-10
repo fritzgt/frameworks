@@ -8,9 +8,25 @@
 import UIKit
 import RPN
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController {
     
-//MARK: - Outlets
+    //MARK: - Properties
+    private let numberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.allowsFloats = true
+        formatter.maximumIntegerDigits = 20
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 20
+        return formatter
+    }()
+    
+//    private var calculator = Calculator() {
+//        didSet {
+////            if let value = calculator.
+//        }
+//    }
+    
+    //MARK: - Outlets
     @IBOutlet weak var textLabel: UITextField!
     
 
@@ -19,7 +35,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         textLabel.delegate = self
     }
 
-//MARK: - Actions
+    //MARK: - Actions
     @IBAction func numberButtonTap(_ sender: UIButton) {
         print(sender.tag)
     }
@@ -44,3 +60,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
 }
 
+extension ViewController: UITextFieldDelegate {
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    
+}
