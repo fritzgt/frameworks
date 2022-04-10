@@ -21,7 +21,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x3y-Qq-0Ya">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="151"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="72"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="KwA-vk-jKh">
@@ -64,7 +64,7 @@
                                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="72"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="deviceButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wg6-5d-dip"/>
+                                                    <action selector="divideButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qme-i5-dTX"/>
                                                 </connections>
                                             </button>
                                         </subviews>

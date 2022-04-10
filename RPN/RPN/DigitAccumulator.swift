@@ -10,7 +10,7 @@ import Foundation
 
 public struct DigitAccumulator {
     
-    enum Digit: Equatable {
+    public enum Digit: Equatable {
         case decimalPoint
         case number(Int)
     }
@@ -28,10 +28,10 @@ public struct DigitAccumulator {
         switch digit {
         case .decimalPoint:
             if digits.contains(.decimalPoint){
-                throw DigitAccumulator.extraDecimalPoint
+                throw DigitAccumulatorError.extraDecimalPoint
             }
         case .number(let value):
-            if value < 0 || 0 < value {
+            if value < 0 || 9 < value {
                 throw DigitAccumulatorError.invalidDigitNumberValue
             }
         }
@@ -42,8 +42,8 @@ public struct DigitAccumulator {
         digits.removeAll()
     }
     
-    public func value() -> Double {
-        var stringNum = digits.map { (digit) -> String in
+    public func value() -> Double? {
+        let stringNum = digits.map { (digit) -> String in
             switch digit {
             case .decimalPoint:
                 return "."

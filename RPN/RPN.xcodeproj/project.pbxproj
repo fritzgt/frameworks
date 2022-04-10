@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04011C4B280384D900A81A1F /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04011C4A280384D800A81A1F /* Calculator.swift */; };
+		04011C4F280384FE00A81A1F /* DigitAccumulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04011C4C280384FE00A81A1F /* DigitAccumulator.swift */; };
+		04011C512803855400A81A1F /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04011C502803855400A81A1F /* Stack.swift */; };
 		04A32D9C280333BC00D567DB /* RPN.docc in Sources */ = {isa = PBXBuildFile; fileRef = 04A32D9B280333BC00D567DB /* RPN.docc */; };
 		04A32DA2280333BC00D567DB /* RPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A32D97280333BC00D567DB /* RPN.framework */; };
 		04A32DA7280333BC00D567DB /* RPNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A32DA6280333BC00D567DB /* RPNTests.swift */; };
@@ -24,6 +27,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04011C4A280384D800A81A1F /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		04011C4C280384FE00A81A1F /* DigitAccumulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitAccumulator.swift; sourceTree = "<group>"; };
+		04011C502803855400A81A1F /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		04A32D97280333BC00D567DB /* RPN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RPN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A32D9A280333BC00D567DB /* RPN.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPN.h; sourceTree = "<group>"; };
 		04A32D9B280333BC00D567DB /* RPN.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = RPN.docc; sourceTree = "<group>"; };
@@ -71,8 +77,11 @@
 		04A32D99280333BC00D567DB /* RPN */ = {
 			isa = PBXGroup;
 			children = (
-				04A32D9A280333BC00D567DB /* RPN.h */,
+				04011C4A280384D800A81A1F /* Calculator.swift */,
+				04011C4C280384FE00A81A1F /* DigitAccumulator.swift */,
 				04A32D9B280333BC00D567DB /* RPN.docc */,
+				04A32D9A280333BC00D567DB /* RPN.h */,
+				04011C502803855400A81A1F /* Stack.swift */,
 			);
 			path = RPN;
 			sourceTree = "<group>";
@@ -194,7 +203,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04011C512803855400A81A1F /* Stack.swift in Sources */,
 				04A32D9C280333BC00D567DB /* RPN.docc in Sources */,
+				04011C4F280384FE00A81A1F /* DigitAccumulator.swift in Sources */,
+				04011C4B280384D900A81A1F /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +408,7 @@
 		04A32DAF280333BC00D567DB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N3P8URX7UV;
@@ -412,6 +425,7 @@
 		04A32DB0280333BC00D567DB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N3P8URX7UV;

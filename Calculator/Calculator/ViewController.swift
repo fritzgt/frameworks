@@ -20,11 +20,25 @@ class ViewController: UIViewController {
         return formatter
     }()
     
-//    private var calculator = Calculator() {
-//        didSet {
-////            if let value = calculator.
-//        }
-//    }
+    private var calculator = Calculator() {
+        didSet {
+            if let value = calculator.topValue {
+                textLabel.text = numberFormatter.string(from: value as NSNumber)
+            }else{
+                textLabel.text = ""
+            }
+        }
+    }
+    
+    private var digitAccumulator = DigitAccumulator() {
+        didSet{
+            if let value = digitAccumulator.value() {
+                textLabel.text = numberFormatter.string(from: value as NSNumber)
+            }else{
+                textLabel.text = ""
+            }
+        }
+    }
     
     //MARK: - Outlets
     @IBOutlet weak var textLabel: UITextField!
@@ -37,25 +51,34 @@ class ViewController: UIViewController {
 
     //MARK: - Actions
     @IBAction func numberButtonTap(_ sender: UIButton) {
-        print(sender.tag)
+        try? digitAccumulator.add(digit: .number(sender.tag))
     }
     
     @IBAction func decimalButtonTapped(_ sender: UIButton) {
+        try? digitAccumulator.add(digit: .decimalPoint)
     }
     
     @IBAction func minusButtonTapped(_ sender: UIButton) {
+        calculator.push(operator: .subtract)
     }
     
     @IBAction func multiplyButtonTapped(_ sender: UIButton) {
+        calculator.push(operator: .multiply)
     }
     
-    @IBAction func deviceButtonTapped(_ sender: UIButton) {
+    @IBAction func divideButtonTapped(_ sender: UIButton) {
+        calculator.push(operator: .divide)
     }
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
+        calculator.push(operator: .add)
     }
     
     @IBAction func returnButtonTapped(_ sender: Any) {
+        if let value = digitAccumulator.value() {
+            calculator.push(number: value)
+        }
+        digitAccumulator.clear()
     }
     
 }
@@ -63,6 +86,8 @@ class ViewController: UIViewController {
 extension ViewController: UITextFieldDelegate {
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        calculator.clearStack()
+        digitAccumulator.clear()
         return true
     }
     

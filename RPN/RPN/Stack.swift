@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Stack<T>: ExpressibleByNilLiteral {
+struct Stack<T> : ExpressibleByArrayLiteral {
     typealias ArrayLiteralElement = T
     
     private(set) var items: [T]
@@ -20,7 +20,7 @@ struct Stack<T>: ExpressibleByNilLiteral {
         items.append(value)
     }
     
-    func pop() -> T? {
+    mutating func pop() -> T? {
         return items.popLast()
     }
     

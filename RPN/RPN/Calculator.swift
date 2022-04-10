@@ -30,7 +30,7 @@ public struct Calculator {
         
         let result: Double
        
-        switch `operator {
+        switch `operator` {
         case .add:
             result = operand1 + operand2
         case .subtract:
@@ -40,6 +40,7 @@ public struct Calculator {
         case .divide:
             result = operand1 / operand2
         }
+        stack.push(result)
     }
     
     public mutating func clearStack() {
