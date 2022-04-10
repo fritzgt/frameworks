@@ -42,4 +42,17 @@ public struct DigitAccumulator {
         digits.removeAll()
     }
     
+    public func value() -> Double {
+        var stringNum = digits.map { (digit) -> String in
+            switch digit {
+            case .decimalPoint:
+                return "."
+            case .number(let value):
+                return String(value)
+            }
+        }.joined()
+        
+        return Double(stringNum)
+    }
+    
 }
